@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        min-height: 100%;
+        font-family: 'Josefin Sans', sans-serif;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        font-weight: 400;
+        overflow-x: hidden;
+      }
+
+      :root {
+        --color-d-red: hsl(0, 36%, 70%);
+        --color-red: hsl(0, 93%, 68%);
+        --color-dark-red: hsl(0, 6%, 24%);
+        --gradient-light: linear-gradient(
+          135deg,
+          from hsl(0, 0%, 100%),
+          to hsl(0, 100%, 98%)
+        );
+        --gradient-d-red-to-red: linear-gradient(
+          135deg,
+          hsl(0, 80%, 86%),
+          hsl(0, 74%, 74%)
+        );
+      }
+
+      header .logo {
+        padding: 2rem;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+      }
+
+      main .hero-left {
+        background: url('./images/hero-mobile.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 300px;
+      }
+
+      main .hero-right {
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+
+      .color-d-red {
+        color: var(--color-d-red);
+      }
+
+      .color-dark-red {
+        color: var(--color-dark-red);
+      }
+
+      .color-red {
+        color: var(--color-red);
+      }
+
+      .font-thin {
+        font-weight: 300;
+      }
+
+      .font-bold {
+        font-weight: 600;
+      }
+
+      .hero-right .headings {
+        letter-spacing: 0.7rem;
+        line-height: 2.7rem;
+        font-size: 2.6rem;
+        text-align: center;
+      }
+
+      .hero-right .description {
+        margin: 1.75rem 0;
+        line-height: 1.5rem;
+        text-align: center;
+      }
+
+      .hero-right .form-wrap {
+        display: inline-block;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      .form-wrap input[type='email'] {
+        width: 200px;
+        padding: 1rem;
+        border-radius: 500px;
+        border: 1px solid var(--color-d-red);
+        font-family: inherit;
+        font-size: 1rem;
+      }
+
+      .form-wrap input[type='email']:focus {
+        outline: none;
+      }
+
+      .form-wrap input[type='email']::placeholder {
+        color: var(--color-d-red);
+      }
+
+      .form-wrap button {
+        position: absolute;
+        padding: 0 3rem;
+        /* height: 100%; */
+        height: 3.5rem;
+        right: 0;
+        background: var(--gradient-d-red-to-red);
+        border: none;
+        border-radius: 100px;
+        box-shadow: 0 10px 25px 1px var(--color-d-red);
+        transition: all 0.35s ease;
+      }
+
+      .form-wrap button.fail {
+        transform: translateX(50%);
+      }
+
+      .form-wrap button:focus {
+        outline: none;
+      }
+
+      .error-icon {
+        visibility: hidden;
+        left: -4rem;
+        vertical-align: middle;
+        position: relative;
+      }
+
+      @media screen and (min-width: 1440px) {
+        html,
+        body {
+          overflow-y: hidden;
+        }
+        header {
+          position: absolute;
+          padding-top: 50px;
+          left: 15rem;
+          z-index: 3;
+        }
+        main {
+          width: 100%;
+          height: 100%;
+          flex-direction: row;
+          position: relative;
+        }
+        main .hero-left {
+          background-image: url('./images/hero-desktop.jpg');
+          flex: 1 1 40%;
+          order: 2;
+          height: 100vh;
+        }
+        main .hero-right {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          flex: 1 1 60%;
+          height: 90vh;
+          background-image: url('./images/bg-pattern-desktop.svg');
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+        .hero-right > *:not(.form-wrap) {
+          padding: 0 15rem;
+        }
+        .hero-right .headings {
+          font-size: 5rem;
+          text-align: left;
+          align-self: flex-start;
+          line-height: 5rem;
+          letter-spacing: 1.8rem;
+          margin-bottom: 1rem;
+        }
+        .hero-right .description {
+          text-align: left;
+        }
+        .hero-right .form-wrap {
+          display: block;
+          position: relative;
+          margin: 2rem 0;
+          left: 15rem;
+        }
+        .form-wrap input[type='email'] {
+          width: 300px;
+          padding: 1.5rem;
+        }
+        .form-wrap .form-btn {
+          padding: 0 3rem;
+          height: 4.3rem;
+        }
+        .visible-on-desktop {
+          display: block;
+        }
+        .error-icon {
+          left: -5rem;
+        }
+      }
+
+      /* .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      } */
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="./images/logo.svg" alt="" class="logo" />
+    </header>
+    <main>
+      <div class="hero-left"></div>
+      <div class="hero-right">
+        <div class="headings color-dark-red font-bold">
+          <span class="color-d-red font-thin">WE'RE</span><br />COMING
+          <br />SOON
+        </div>
+        <div class="description color-d-red font-bold">
+          Hello fellow shoppers! We're currently building our new<br
+            class="visible-on-desktop"
+          />
+          fashion store. Add your email below to stay up-to-date with<br
+            class="visible-on-desktop"
+          />
+          announcements and our launch deals.
+        </div>
+        <div class="form-wrap">
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Email Address"
+          />
+          <img src="./images/icon-error.svg" class="error-icon" />
+          <button type="button" class="form-btn">
+            <img src="./images/icon-arrow.svg" alt="" />
+          </button>
+          <div
+            class="color-red valid-email"
+            style="
+              text-align: left;
+              margin: 0.7rem 0 0 1.5rem;
+              visibility: hidden;
+            "
+          >
+            Please provide a valid email
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </p>
+    </footer> -->
+    <script>
+      const email = document.querySelector('input[type="email"]')
+      const btn = document.querySelector('.form-wrap > button')
+      const errorIcon = document.querySelector('.error-icon')
+      const validMessage = document.querySelector('.valid-email')
+
+      btn.addEventListener('click', function () {
+        if (!email.validity.valid) {
+          btn.classList.add('fail')
+          errorIcon.style.visibility = 'visible'
+          validMessage.style.visibility = 'visible'
+          return
+        }
+      })
+
+      // console.log(email.validity.valid)
+    </script>
+  </body>
+</html>
